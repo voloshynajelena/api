@@ -7,7 +7,7 @@ import { Cat, CatSchema } from './cats/cat.schema';
 import * as dotenv from 'dotenv';
 
 dotenv.config();
-
+console.log('KEY ', process.env.MONGO_KEY);
 @Module({
   imports: [
     CatsModule,
