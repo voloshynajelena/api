@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Delete, Param, Body, Logger, NotFoundException } from "@nestjs/common";
+import { Controller, Get, Post, Put, Delete, Param, Body, Logger, NotFoundException } from "@nestjs/common";
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { Cat } from './cat.model';
@@ -35,6 +35,15 @@ export class CatsController {
   async createCat(@Body() cat: Cat): Promise<Cat> {
     const createdCat = new this.catModel(cat);
     return createdCat.save();
+  }
+
+  @Put(':id')
+  async updateCat(@Param('id') id: string, @Body() catData: Cat): Promise<Cat> {
+    const updatedCat = await this.catModel.findByIdAndUpdate(id, catData, { new: true }).exec();
+    if (!updatedCat) {
+      throw new NotFoundException(`Cat with id ${id} not found`);
+    }
+    return updatedCat;
   }
 
   @Delete(':id')
