@@ -6,7 +6,8 @@ const port = process.env.PORT || 3000; // Use the provided port or default to 30
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-
+  // from: https://docs.nestjs.com/security/cors
+  app.enableCors();
   const config = new DocumentBuilder()
     .setTitle('Cats example')
     .setDescription('The cats API description')
