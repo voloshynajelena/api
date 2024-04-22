@@ -39,7 +39,9 @@ export class CatsController {
 
   @Put(':id')
   async updateCat(@Param('id') id: string, @Body() catData: Cat): Promise<Cat> {
-    const updatedCat = await this.catModel.findByIdAndUpdate(id, catData, { new: true }).exec();
+    const updatedCat = await this.catModel
+      .findByIdAndUpdate(id, catData, { new: true })
+      .exec();
     if (!updatedCat) {
       throw new NotFoundException(`Cat with id ${id} not found`);
     }
