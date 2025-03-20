@@ -1,0 +1,1 @@
+{"version":3,"file":"common.schema.js","sourceRoot":"","sources":["../../src/Common/common.schema.ts"],"names":[],"mappings":";;;;;;;;;;;;AAAA,+CAA+D;AAGxD,IAAM,QAAQ,sBAAd,MAAM,QAAQ;CAMpB,CAAA;AAJC;IADC,IAAA,eAAI,GAAE;;sCACM;AAGb;IADC,IAAA,eAAI,GAAE;;wCACQ;mBALJ,QAAQ;IADpB,IAAA,iBAAM,GAAE;GACI,QAAQ,CAMpB;AAEY,QAAA,cAAc,GAAG,wBAAa,CAAC,cAAc,CAAC,QAAQ,CAAC,CAAC"}
